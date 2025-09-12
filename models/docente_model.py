@@ -11,4 +11,4 @@ class Docente(Base):
     email = Column(String(50), nullable=False)
     especialidad = Column(String(80), nullable=False)
     
-    
+    curso = relationship("Curso", back_populates="docente")
