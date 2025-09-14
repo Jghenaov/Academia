@@ -9,6 +9,7 @@ class Curso(Base):
     nombre_curso = Column(String(50), nullable=False)
     descripcion = Column(String(255), nullable=False)
     creditos = Column(Integer, nullable=False)
-    id_docentes = Column(Integer, ForeignKey('Docentes.id_docente'))
+    id_docente = Column(Integer, ForeignKey('Docentes.id_docente'))
     
     docente = relationship("Docente", back_populates="cursos")
+    inscripciones = relationship("Inscripcion", back_populates="cursos")

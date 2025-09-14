@@ -10,5 +10,5 @@ class Inscripcion(Base):
     id_curso = Column(Integer, ForeignKey('Cursos.id_curso'))
     fecha_inscripcion = Column(DateTime, default=datetime.now(), nullable=False)
 
-    estudiante = relationship("Estudiante", back_populates="inscripciones")
-    curso = relationship("Curso", back_populates="inscripciones")
+    estudiantes = relationship("Estudiante", back_populates="inscripciones")
+    cursos = relationship("Curso", back_populates="inscripciones")

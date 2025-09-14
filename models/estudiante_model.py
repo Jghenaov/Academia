@@ -12,3 +12,4 @@ class Estudiante (Base):
     email = Column(String(25), nullable=False)
     telefono = Column(String(15), nullable=False)
     
+    inscripciones = relationship("Inscripcion", back_populates="estudiantes")
