@@ -55,20 +55,25 @@ def eliminar_curso(id_curso):
 
 # Funcion para actualizar un curso        
 def actualizar_curso(id_curso, nombre_curso, descripcion, creditos, id_docente):
-    session = Session()
     try:
-        curso = session.query(Curso).get(id_curso)
-        curso.nombre_curso = nombre_curso
-        curso.descripcion = descripcion
-        curso.creditos = creditos
-        curso.id_docente = id_docente
-        session.commit()
-        logger.info('Curso actualizado exitosamente')
+        with Session() as session:
+            curso = session.get(Curso, id_curso)
+            if not curso:
+                logger.warning(f"No se encontró un curso con ID {id_curso}")
+                return False
+
+            curso.nombre_curso = nombre_curso
+            curso.descripcion = descripcion
+            curso.creditos = creditos
+            curso.id_docente = id_docente
+
+            session.commit()
+            logger.info(f"Curso con ID {id_curso} actualizado exitosamente")
+            return True
     except Exception as e:
-        session.rollback()
-        logger.error(f'Error al actualizar el curso: {e}')
-    finally:
-        Session.close()
+        logger.error(f"Error al actualizar el curso: {e}")
+        return False
+
 #----------------------------------------------------------------------------
 
         
