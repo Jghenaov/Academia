@@ -78,5 +78,19 @@ def actualizar_docente(id_docente, numero_documento, nombre, apellido, email, es
         return False
 #----------------------------------------------------------------------------
 
+# Funcion para obtener un docente por su ID
+def obtener_docente(id_docente):
+    session = Session()
+    try:
+        docente = session.query(Docente).filter_by(id_docente=id_docente).first()
+        logger.info('Docente obtenido exitosamente')
+        return docente
+    except Exception as e:
+        logger.error(f'Error al obtener el docente: {e}')
+        return None
+    finally:
+        session.close()
         
+
+
 
