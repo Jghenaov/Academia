@@ -5,7 +5,7 @@ from data.database import Base
 class Estudiante (Base):
     __tablename__ = 'Estudiantes'
     id_estudiante = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    numero_documento = Column(String(50), nullable=False)
+    numero_documento = Column(String(50), nullable=False, unique=True)
     nombre = Column(String(50), nullable=False)
     apellido = Column(String(50), nullable=False)
     fecha_nacimiento = Column(String(50), nullable=False)

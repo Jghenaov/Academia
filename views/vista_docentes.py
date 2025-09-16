@@ -3,14 +3,14 @@ from prettytable import PrettyTable
 def mostrar_docente(docente):
     """Muestra la información de un docente."""
     tabla = PrettyTable()
-    tabla.field_names = ["Número de documento", "Nombre", "Apellido", "Email", "Teléfono", "Especialidad"]
-    tabla.add_row([docente[1], docente[2], docente[3], docente[4], docente[5], docente[6]])
+    tabla.field_names = [ "ID",  "Número de documento", "Nombre", "Apellido", "Email", "Especialidad"]
+    tabla.add_row([docente.id_docente, docente.numero_documento, docente.nombre, docente.apellido, docente.email, docente.especialidad])
     print(tabla)
 
 def mostrar_docentes(docentes):
     """Muestra la lista de docentes."""
     tabla = PrettyTable()
-    tabla.field_names = ["Número de documento", "Nombre", "Apellido", "Email", "Teléfono", "Especialidad"]
+    tabla.field_names = ["ID", "Número de documento", "Nombre", "Apellido", "Email", "Especialidad"]
     for docente in docentes:
-        tabla.add_row([docente[1], docente[2], docente[3], docente[4], docente[5], docente[6]])
+        tabla.add_row([docente.id_docente, docente.numero_documento, docente.nombre, docente.apellido, docente.email, docente.especialidad])
     print(tabla)

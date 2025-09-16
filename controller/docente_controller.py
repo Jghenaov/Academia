@@ -79,7 +79,7 @@ def actualizar_docente(id_docente, numero_documento, nombre, apellido, email, es
 #----------------------------------------------------------------------------
 
 # Funcion para obtener un docente por su ID
-def obtener_docente(id_docente):
+def obtener_docente_por_id(id_docente):
     session = Session()
     try:
         docente = session.query(Docente).filter_by(id_docente=id_docente).first()
@@ -92,5 +92,29 @@ def obtener_docente(id_docente):
         session.close()
         
 
+# Funcion para asiganar un curso a un docente
+def asignar_curso_docente(id_docente, id_curso):
+    try:
+        with Session() as session:
+            docente = session.get(Docente, id_docente)
+            if not docente:
+                logger.warning(f"No se encontró un docente con ID {id_docente}")
+                return False
+
+            docente.id_curso = id_curso
+
+            session.commit()
+            logger.info(f"Docente con ID {id_docente} actualizado exitosamente")
+            return True
+    except Exception as e:
+        logger.error(f"Error al actualizar el docente: {e}")
+        return False
 
 
+def existe_numero_documento(numero_documento):
+    session = Session()
+    try:
+        return session.query(Docente).filter_by(numero_documento=numero_documento).first() is not None
+    
+    finally:
+        session.close()

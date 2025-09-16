@@ -1,10 +1,8 @@
 from controller.cursos_controller import obtener_cursos, registro_curso, actualizar_curso, eliminar_curso, mostrar_cursos_docente, existe_docente
-from views.vista_cursos import mostrar_cursos
-import os
+from views.vista_cursos import mostrar_cursos, mostrar_curso_por_docente
+from utils.others import limpiar_consola
 
-# Funcion para limpiar la consola
-def limpiar_consola():
-    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def menuCursos():
     while True:
@@ -71,7 +69,9 @@ def menuCursos():
                 input('Presione enter para continuar...')
                 continue
             id_curso = int(input('Ingrese el id del curso: '))
-            eliminar_curso(id_curso)
+            confirmacion = input('Desea eliminar el curso? (s/n): ')
+            if confirmacion.lower() == 's':
+                eliminar_curso(id_curso)
             input('Curso eliminado exitosamente, presione enter para continuar...')
             
         elif opcion == '5':
@@ -81,13 +81,12 @@ def menuCursos():
                 print('El id del docente no existe')
                 input('Presione enter para continuar...')
                 continue
-            cursos = mostrar_cursos_docente(id_docente)
+            cursos = mostrar_cursos_docente(id_docente) 
             if not cursos:
                 print('No se encontraron cursos')
                 input('Presione enter para continuar...')
                 continue
-            for curso in cursos:
-                print(curso)
+            mostrar_curso_por_docente(cursos)  
             input('Presione enter para continuar...')
                 
         elif opcion == '6':            

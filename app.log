@@ -1,4 +1,11 @@
-2025-09-13 21:37:14 - data.database - INFO - Tablas creadas exitosamente
-2025-09-13 21:37:14 - data.database - INFO - Conexion exitosa a la base de datos
-2025-09-13 21:37:27 - controller.cursos_controller - INFO - Cursos obtenidos exitosamente
-2025-09-13 21:37:38 - controller.cursos_controller - INFO - Cursos obtenidos exitosamente
+2025-09-15 20:11:16 - data.database - INFO - Tablas creadas exitosamente
+2025-09-15 20:11:16 - data.database - INFO - Conexion exitosa a la base de datos
+2025-09-15 20:11:34 - controller.cursos_controller - INFO - Cursos obtenidos exitosamente
+2025-09-15 20:17:32 - controller.docente_controller - INFO - Docente Marlon registrado exitosamente
+2025-09-15 20:18:53 - controller.docente_controller - INFO - Docente Camila registrado exitosamente
+2025-09-15 20:19:15 - controller.docente_controller - INFO - Docentes obtenidos exitosamente
+2025-09-15 20:27:45 - controller.cursos_controller - INFO - Curso registrado exitosamente
+2025-09-15 20:29:27 - controller.docente_controller - INFO - Docentes obtenidos exitosamente
+2025-09-15 20:32:38 - controller.cursos_controller - INFO - Curso registrado exitosamente
+2025-09-15 20:33:13 - controller.cursos_controller - INFO - Curso registrado exitosamente
+2025-09-15 20:35:01 - controller.docente_controller - INFO - Docente obtenido exitosamente

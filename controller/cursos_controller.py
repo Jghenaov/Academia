@@ -2,6 +2,7 @@ from models.curso_model import Curso
 from data.database import Session
 from utils.logs import get_logger
 from models.docente_model import Docente
+from sqlalchemy.orm import joinedload
 
 logger = get_logger(__name__)
 
@@ -30,7 +31,7 @@ def registro_curso(nombre_curso, descripcion, creditos, id_docente):
 def obtener_cursos():
     session = Session()
     try:
-        cursos = session.query(Curso).all()
+        cursos = session.query(Curso).options(joinedload(Curso.docente)).all()
         logger.info('Cursos obtenidos exitosamente')
         return cursos
     except Exception as e:
@@ -84,12 +85,8 @@ def actualizar_curso(id_curso, nombre_curso, descripcion, creditos, id_docente):
 def mostrar_cursos_docente(id_docente):
     session = Session()
     try:
-        cursos = session.query(Curso).filter_by(id_docente=id_docente).all()
-        logger.info('Cursos obtenidos exitosamente')
+        cursos = session.query(Curso).options(joinedload(Curso.docente)).filter(Curso.id_docente == id_docente).all()
         return cursos
-    except Exception as e:
-        logger.error(f'Error al obtener los cursos: {e}')
-        return []
     finally:
         session.close()
 
@@ -99,5 +96,18 @@ def existe_docente(id_docente):
     try:
         docente = session.query(Docente).filter_by(id_docente=id_docente).first()
         return docente is not None
+    finally:
+        session.close()
+        
+#Verificar si un curso existe por su id        
+def existe_curso(id_curso):
+    session = Session()
+    try:
+        curso = session.query(Curso).filter_by(id_curso=id_curso).first()
+        logger.info(f'Curso con  ID {id_curso} obtenido exitosamente')
+        return curso is not None
+    except Exception as e:
+        logger.error(f'Error al obtener el curso: {e}')
+        return False
     finally:
         session.close()
