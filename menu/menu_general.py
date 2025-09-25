@@ -1,5 +1,7 @@
-from menu.menu_cursos import menuCursos, limpiar_consola
+from menu.menu_cursos import menuCursos
 from menu.menu_docentes import menuDocentes
+from menu.menu_estudiante import menuEstudiantes
+from utils.others import limpiar_consola
 
 def menuGeneral():
     while True:
@@ -7,7 +9,8 @@ def menuGeneral():
         print('----------Menu general----------')
         print('\n1. Cursos')
         print('2. Docentes')
-        print('3. Salir')
+        print('3. Estudiantes')
+        print('4. Salir')
         print('-------------------------------')
 
         opcion = input('\nSeleccione una opcion: ')
@@ -17,4 +20,9 @@ def menuGeneral():
         elif opcion == '2':
             menuDocentes()
         elif opcion == '3':
+            menuEstudiantes()
+        elif opcion == '4':
             break
+        else:
+            print('Opcion no valida')
+            input('Presione enter para continuar...')
