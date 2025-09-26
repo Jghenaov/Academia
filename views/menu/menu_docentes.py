@@ -1,4 +1,4 @@
-from controller.docente_controller import registro_docente, obtener_docentes, obtener_docente_por_id, actualizar_docente, eliminar_docente, existe_numero_documento
+from controller.docentes_controller import registro_docente, obtener_docentes, obtener_docente_por_id, actualizar_docente, eliminar_docente, existe_numero_documento
 from views.vista_docentes import mostrar_docentes, mostrar_docente
 from utils.others import limpiar_consola
 

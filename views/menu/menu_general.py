@@ -1,6 +1,6 @@
-from menu.menu_cursos import menuCursos
-from menu.menu_docentes import menuDocentes
-from menu.menu_estudiante import menuEstudiantes
+from .menu_cursos import menuCursos
+from .menu_docentes import menuDocentes
+from .menu_estudiante import menuEstudiantes
 from utils.others import limpiar_consola
 
 def menuGeneral():

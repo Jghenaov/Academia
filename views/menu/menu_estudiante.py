@@ -1,4 +1,4 @@
-from controller.estudiante_controller import  * #registro_estudiante, obtener_estudiantes, obtener_estudiante_por_id, actualizar_estudiante, eliminar_estudiante
+from controller.estudiantes_controller import  * #registro_estudiante, obtener_estudiantes, obtener_estudiante_por_id, actualizar_estudiante, eliminar_estudiante
 from views.vista_estudiante import mostrar_estudiantes, mostrar_estudiante
 from utils.others import limpiar_consola
 
