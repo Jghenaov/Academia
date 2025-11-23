@@ -1,5 +1,7 @@
 from controller.cursos_controller import obtener_cursos, registro_curso, actualizar_curso, eliminar_curso, mostrar_cursos_docente, existe_docente
+from controller.docentes_controller import obtener_docentes
 from views.vista_cursos import mostrar_cursos, mostrar_curso_por_docente
+from views.vista_docentes import mostrar_docentes
 from utils.others import limpiar_consola
 
 
@@ -49,6 +51,7 @@ def menuCursos():
         elif opcion == '3':
             limpiar_consola()
             cursos = obtener_cursos()
+            mostrar_cursos(cursos)
             if not cursos:
                 print('No se encontraron cursos')
                 input('Presione enter para continuar...')
@@ -64,6 +67,7 @@ def menuCursos():
         elif opcion == '4':
             limpiar_consola()
             cursos = obtener_cursos()
+            mostrar_cursos(cursos)
             if not cursos:
                 print('No se encontraron cursos')
                 input('Presione enter para continuar...')
@@ -76,6 +80,8 @@ def menuCursos():
             
         elif opcion == '5':
             limpiar_consola()
+            docentes = obtener_docentes()
+            mostrar_docentes(docentes)
             id_docente = int(input('Ingrese el id del docente: '))
             if not existe_docente(id_docente):
                 print('El id del docente no existe')
