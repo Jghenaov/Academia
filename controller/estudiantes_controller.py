@@ -76,6 +76,7 @@ def actualizar_estudiante(id_estudiante, numero_documento, nombre, apellido, fec
             logger.info(f"Estudiante {nombre} con ID {id_estudiante} actualizado exitosamente")
             return True
     except Exception as e:
+        session.rollback()
         logger.error(f"Error al actualizar el estudiante: {e}")
         return False
     

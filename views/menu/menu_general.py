@@ -1,6 +1,7 @@
 from .menu_cursos import menuCursos
 from .menu_docentes import menuDocentes
 from .menu_estudiante import menuEstudiantes
+from .menu_inscripciones import menuInscripciones
 from utils.others import limpiar_consola
 
 def menuGeneral():
@@ -10,7 +11,8 @@ def menuGeneral():
         print('\n1. Cursos')
         print('2. Docentes')
         print('3. Estudiantes')
-        print('4. Salir')
+        print('4. Inscripciones')
+        print('5. Salir')
         print('-------------------------------')
 
         opcion = input('\nSeleccione una opcion: ')
@@ -22,6 +24,8 @@ def menuGeneral():
         elif opcion == '3':
             menuEstudiantes()
         elif opcion == '4':
+            menuInscripciones()
+        elif opcion == '5':
             break
         else:
             print('Opcion no valida')
