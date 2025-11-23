@@ -42,6 +42,8 @@ def menuDocentes():
 
         elif opcion == '3':
             limpiar_consola()
+            docentes = obtener_docentes()
+            mostrar_docentes(docentes)
             id_docente = int(input("Ingrese el ID del docente a actualizar: "))
             docente = obtener_docente_por_id(id_docente)
             if docente:
@@ -65,6 +67,8 @@ def menuDocentes():
 
         elif opcion == '4':
             limpiar_consola()
+            docentes = obtener_docentes()
+            mostrar_docentes(docentes)
             try:
                 id_docente = int(input("Ingrese el ID del docente a eliminar: "))
                 busqueda = obtener_docente_por_id(id_docente)
@@ -84,6 +88,8 @@ def menuDocentes():
 
         elif opcion == '5':
             limpiar_consola()
+            docentes = obtener_docentes()
+            mostrar_docentes(docentes)
             try:
                 id_docente = int(input("Ingrese el ID del docente: "))
                 docente = obtener_docente_por_id(id_docente)
