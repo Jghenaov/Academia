@@ -38,6 +38,8 @@ def menuEstudiantes():
             
         elif opcion == "3":
             limpiar_consola()
+            estudiantes = obtener_estudiantes()
+            mostrar_estudiantes(estudiantes)
             try:
                 id_estudiante = int(input("Ingrese el ID del estudiante: "))
                 estudiante = obtener_estudiante_por_id(id_estudiante)
@@ -53,6 +55,8 @@ def menuEstudiantes():
                 
         elif opcion == "4":
             limpiar_consola()
+            estudiantes = obtener_estudiantes()
+            mostrar_estudiantes(estudiantes)
             try:
                 id_estudiante = int(input("Ingrese el ID del estudiante: "))
                 estudiante = obtener_estudiante_por_id(id_estudiante)
@@ -82,6 +86,8 @@ def menuEstudiantes():
                 
         elif opcion == "5":
             limpiar_consola()
+            estudiantes = obtener_estudiantes()
+            mostrar_estudiantes(estudiantes)
             try:
                 id_estudiante = int(input("Ingrese el ID del estudiante: "))
                 estudiante = obtener_estudiante_por_id(id_estudiante)
