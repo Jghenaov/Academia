@@ -71,6 +71,8 @@ def menuInscripciones():
         elif opcion == "3":
             try:
                 limpiar_consola()
+                estudiantes = obtener_estudiantes()
+                mostrar_estudiantes(estudiantes)
                 id_estudiante = int(input("Ingrese el ID del estudiante: ")) 
                 esttudiante =obtener_inscripciones_estudiante(id_estudiante)
                 if not esttudiante:
@@ -86,6 +88,8 @@ def menuInscripciones():
         elif opcion == "4":
             try:
                 limpiar_consola()
+                cursos = obtener_cursos()
+                mostrar_cursos(cursos)
                 id_curso = int(input("Ingrese el ID del curso: "))
                 cursos = obtener_inscripciones_curso(id_curso)
                 if not cursos:
@@ -101,6 +105,8 @@ def menuInscripciones():
         elif opcion == "5":
             try:
                 limpiar_consola()
+                inscripciones = obtener_inscripciones()
+                mostar_inscripciones(inscripciones)
                 id_inscripcion = int(input("Ingrese el ID de la inscripcion: "))
                 inscripcion = obtener_inscripcion_por_id(id_inscripcion)
                 if not inscripcion:
@@ -119,6 +125,8 @@ def menuInscripciones():
         elif opcion == "6":
             try:
                 limpiar_consola()
+                inscripciones = obtener_inscripciones()
+                mostar_inscripciones(inscripciones)
                 id_inscripcion = int(input("Ingrese el ID de la inscripcion: "))
                 inscripcion = obtener_inscripcion_por_id(id_inscripcion)
                 if not inscripcion:
